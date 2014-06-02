@@ -1,0 +1,96 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CARC</title>
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h2>Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval</h2>
+			<h4>
+			<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/">Bor-Chun Chen</a>, 
+			<a href="http://www.iis.sinica.edu.tw/pages/song/index_en.html">Chu-Song Chen</a>, 
+			<a href="http://www.csie.ntu.edu.tw/~winston/">Winston Hsu</a>
+			</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5 col-md-offset-2">
+			<img src="fig_example.jpg" class="img-responsive"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h3>Abstract</h3>
+			Recently, promising results have been shown on face recognition researches. However, face recognition and retrieval across age is still challenging. Unlike prior methods using complex models with strong parametric assumptions to model the aging process, we use a data-driven method to address this problem. We propose a novel coding framework called Cross-Age Reference Coding (CARC). By leveraging a large-scale image dataset freely available on the Internet as a reference set, CARC is able to encode the low-level feature of a face image with an age-invariant reference space. In the testing phase, the proposed method only requires a linear projection to encode the feature and therefore it is highly scalable. To thoroughly evaluate our work, we introduce a new large-scale dataset for face recognition and retrieval across age called Cross-Age Celebrity Dataset (CACD). The dataset contains more than 160,000 images of 2,000 celebrities with age ranging from 16 to 62. To the best of our knowledge, it is by far the largest publicly available cross-age face dataset. Experimental results show that the proposed method can achieve state-of-the-art performance on both our dataset as well as the other widely used dataset for face recognition across age, MORPH dataset.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h3>Publication</h3>
+			Bor-Chun Chen, Chu-Song Chen, Winston Hsu. Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval, 2014 
+			[<a href="./CARC.html" target=_blank>Pdf</a>]
+			[<a data-toggle="collapse" data-target="#bibtex">Bibtex</a>]
+			<div id="bibtex" class="well collapse">
+				@inproceedings{chen2014cross, <br />
+				Author = {Bor-Chun Chen and Chu-Song Chen and Winston Hsu}, <br />
+				Booktitle = {}, <br />
+				Title = {Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval}, <br />
+				Year = {2014} <br />
+				} 
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h3>Dataset</h3>
+			Cross-Age Celebrity Dataset (CACD) contains 163,446 images from 2,000 celebrities collected from the Internet. The images are collected from search engines using celebrity name and year (2004-2013) as keywords. We can therefore estimate the ages of the celebrities on the images by simply subtract the birth year from the year of which the photo was taken.
+			The downloaded dataset contain two MATLAB structures:
+			<div class="well">
+				<ul class="list-unstyled">
+					<li>celebrityData - contains information of the 2,000 celebrities</li>
+						<ul>
+						<li>name - celebrity name</li>
+						<li>identity - celebrity id</li>
+						<li>birth - celebrity brith year</li>
+						<li>rank - rank of the celebrity with same birth year in IMDB.com when the dataset was constructed</li>
+						<li>lfw - whether the celebrity is in LFW dataset</li>
+						</ul>
+					<li>celebrityImageData - contains information of the face images</li>
+						<ul>
+						<li>age - estimated age of the celebrity</li>
+						<li>identity - celebrity id</li>
+						<li>year - year of which the photo was taken</li>
+						<li>feature - 75,520 dimension LBP feature extracted from 16 facial landmarks</li>
+						<li>name - file name of the image</li>
+						</ul>
+				</ul>
+			</div>
+			Note that images of the celebrities with rank smaller or equal to five was manually annotated, images of other celebrities might contain noises.
+			
+			<h5>The dataset can be downloaded [<a href="./celebrity2000.mat">here</a>] (4.4G)</h5>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h3>Code</h3>
+			Please download the code from [<a href="./CARC.tar">here</a>]
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			Contact <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a> for any questions/problems/bug reports/etc.
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
