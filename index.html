@@ -33,8 +33,8 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h3>Publication</h3>
-			Bor-Chun Chen, Chu-Song Chen, Winston Hsu. Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval, ECCV 2014 
-			[<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/">Pdf</a>]
+			Bor-Chun Chen, Chu-Song Chen, Winston H. Hsu. Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval, ECCV 2014 
+			[<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/papers/chen14eccv.pdf">Pdf</a>]
 			[<a data-toggle="collapse" data-target="#bibtex">Bibtex</a>]
 			<div id="bibtex" class="well collapse">
 				@inproceedings{chen14cross, <br />
@@ -63,16 +63,16 @@
 						</ul>
 					<li>celebrityImageData - contains information of the face images</li>
 						<ul>
-						<li>age - estimated age of the celebrity (noisy)</li>
+						<li>age - estimated age of the celebrity</li>
 						<li>identity - celebrity id</li>
-						<li>year - year of which the photo was taken</li>
+						<li>year - estimated year of which the photo was taken</li>
 						<li>feature - 75,520 dimension LBP feature extracted from 16 facial landmarks</li>
 						<li>name - file name of the image</li>
 						</ul>
 				</ul>
 			</div>
 			<p>
-			*Note that we manually removed nosiy images from celebrities with rank smaller or equal to five. However, since some of the images are hard to identify even for humans, so the dataset might still contains small noises. Also, we only employ very  simple duplicate detection method, so the dataset might still contain near-duplicate images.
+			*Note that we manually removed noisy images from celebrities with rank smaller or equal to five. However, since some of the images are hard to identify even for humans, the dataset might still contains small noises. Also, we only employ very  simple duplicate detection method, so the dataset might still contain near-duplicate images.
 			</p>
 			<p>
 			*Images of other celebrities (with rank higher than five) will contain noises, so they should not be use for evaluation.
@@ -81,8 +81,9 @@
 			We are currently working on constructing a verification subset by checking the images with webstie content, so that the subset wiil be noise free. Please come back and check the update!
 			</p>
 			
-			<h5>The dataset metadata and features used in this paper can be downloaded [Coming soon] (4.4G)</h5>
-			<h5> Original face images (detected and croped by openCV face detector) can be download [Coming soon] (3.5G)</h5>
+			<h5>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/">here</a>] (4.4G)</h5>
+			<h5> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/">here</a>] (3.5G)</h5>
+			<h5>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</h5>
 			<h5> Please notice that this dataset is made available for academic research purpose only. All the images are collected from the Internet, and the copyright belongs to the original owners. If any of the images belongs to you and you would like it removed, please kindly inform <a href="mailto:bcsiriuschen@gmail.com">us</a>, we will remove it from our dataset immediately.</h5>
 
 
@@ -137,11 +138,13 @@
 		<div class="col-md-12">
 			<h3>Code</h3>
 			<p>
-			To download to code for extracting high-dimensional lbp features use in this paper, please visit [coming soon]
+			For cross-age reference coding (CARC) code use in this paper, please visit [<a href="https://github.com/bcsiriuschen/CARC">here</a>]
 			</p>
+			<!--
 			<p>
-			For cross-age reference coding, please visit [coming soon]
+			We also implemented the high-dimensional LBP features (Chen et al., CVPR 2013), please visit [<a href="http://bcsiriuschen.github.io/High-Dimensional-LBP">here</a>] for more information.
 			</p>
+			-->
 		</div>
 	</div>
 	<hr>
