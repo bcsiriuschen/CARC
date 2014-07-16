@@ -3,156 +3,164 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval</title>
-   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <title>Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-52062463-2', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 
 <body>
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval</h2>
-			<h4>
-			<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/">Bor-Chun Chen</a>, 
-			<a href="http://www.iis.sinica.edu.tw/pages/song/index_en.html">Chu-Song Chen</a>, 
-			<a href="http://www.csie.ntu.edu.tw/~winston/">Winston Hsu</a>
-			</h4>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-5">
-			<img src="fig_example.jpg" class="img-responsive"/>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Abstract</h3>
-			Recently, promising results have been shown on face recognition researches. However, face recognition and retrieval across age is still challenging. Unlike prior methods using complex models with strong parametric assumptions to model the aging process, we use a data-driven method to address this problem. We propose a novel coding framework called Cross-Age Reference Coding (CARC). By leveraging a large-scale image dataset freely available on the Internet as a reference set, CARC is able to encode the low-level feature of a face image with an age-invariant reference space. In the testing phase, the proposed method only requires a linear projection to encode the feature and therefore it is highly scalable. To thoroughly evaluate our work, we introduce a new large-scale dataset for face recognition and retrieval across age called Cross-Age Celebrity Dataset (CACD). The dataset contains more than 160,000 images of 2,000 celebrities with age ranging from 16 to 62. To the best of our knowledge, it is by far the largest publicly available cross-age face dataset. Experimental results show that the proposed method can achieve state-of-the-art performance on both our dataset as well as the other widely used dataset for face recognition across age, MORPH dataset.
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Publication</h3>
-			Bor-Chun Chen, Chu-Song Chen, Winston H. Hsu. Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval, ECCV 2014 
-			[<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/papers/chen14eccv.pdf">Pdf</a>]
-			[<a data-toggle="collapse" data-target="#bibtex">Bibtex</a>]
-			<div id="bibtex" class="well collapse">
-				@inproceedings{chen14cross, <br />
-				Author = {Bor-Chun Chen and Chu-Song Chen and Winston H. Hsu}, <br />
-				Booktitle = {Proceedings of the European Conference on Computer Vision ({ECCV})}, <br />
-				Title = {Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval}, <br />
-				Year = {2014} <br />
-				} 
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Dataset</h3>
-			Cross-Age Celebrity Dataset (CACD) contains 163,446 images from 2,000 celebrities collected from the Internet. The images are collected from search engines using celebrity name and year (2004-2013) as keywords. We can therefore estimate the ages of the celebrities on the images by simply subtract the birth year from the year of which the photo was taken.
-			The downloaded dataset contain two MATLAB structures:
-			<div class="well">
-				<ul class="list-unstyled">
-					<li>celebrityData - contains information of the 2,000 celebrities</li>
-						<ul>
-						<li>name - celebrity name</li>
-						<li>identity - celebrity id</li>
-						<li>birth - celebrity brith year</li>
-						<li>rank - rank of the celebrity with same birth year in IMDB.com when the dataset was constructed</li>
-						<li>lfw - whether the celebrity is in LFW dataset</li>
-						</ul>
-					<li>celebrityImageData - contains information of the face images</li>
-						<ul>
-						<li>age - estimated age of the celebrity</li>
-						<li>identity - celebrity id</li>
-						<li>year - estimated year of which the photo was taken</li>
-						<li>feature - 75,520 dimension LBP feature extracted from 16 facial landmarks</li>
-						<li>name - file name of the image</li>
-						</ul>
-				</ul>
-			</div>
-			<p>
-			*Note that we manually removed noisy images from celebrities with rank smaller or equal to five. However, since some of the images are hard to identify even for humans, the dataset might still contains small noises. Also, we only employ very  simple duplicate detection method, so the dataset might still contain near-duplicate images.
-			</p>
-			<p>
-			*Images of other celebrities (with rank higher than five) will contain noises, so they should not be use for evaluation.
-			</p>
-			<p>
-			We are currently working on constructing a verification subset by checking the images with webstie content, so that the subset wiil be noise free. Please come back and check the update!
-			</p>
-			
-			<h5>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/">here</a>] (4.4G)</h5>
-			<h5> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/">here</a>] (3.5G)</h5>
-			<h5>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</h5>
-			<h5> Please notice that this dataset is made available for academic research purpose only. All the images are collected from the Internet, and the copyright belongs to the original owners. If any of the images belongs to you and you would like it removed, please kindly inform <a href="mailto:bcsiriuschen@gmail.com">us</a>, we will remove it from our dataset immediately.</h5>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval</h2>
+            <h4>
+            <a href="http://cmlab.csie.ntu.edu.tw/~sirius42/">Bor-Chun Chen</a>, 
+            <a href="http://www.iis.sinica.edu.tw/pages/song/index_en.html">Chu-Song Chen</a>, 
+            <a href="http://www.csie.ntu.edu.tw/~winston/">Winston Hsu</a>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <img src="fig_example.jpg" class="img-responsive"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Abstract</h3>
+            Recently, promising results have been shown on face recognition researches. However, face recognition and retrieval across age is still challenging. Unlike prior methods using complex models with strong parametric assumptions to model the aging process, we use a data-driven method to address this problem. We propose a novel coding framework called Cross-Age Reference Coding (CARC). By leveraging a large-scale image dataset freely available on the Internet as a reference set, CARC is able to encode the low-level feature of a face image with an age-invariant reference space. In the testing phase, the proposed method only requires a linear projection to encode the feature and therefore it is highly scalable. To thoroughly evaluate our work, we introduce a new large-scale dataset for face recognition and retrieval across age called Cross-Age Celebrity Dataset (CACD). The dataset contains more than 160,000 images of 2,000 celebrities with age ranging from 16 to 62. To the best of our knowledge, it is by far the largest publicly available cross-age face dataset. Experimental results show that the proposed method can achieve state-of-the-art performance on both our dataset as well as the other widely used dataset for face recognition across age, MORPH dataset.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Publication</h3>
+            Bor-Chun Chen, Chu-Song Chen, Winston H. Hsu. Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval, ECCV 2014 
+            [<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/papers/chen14eccv.pdf">Pdf</a>]
+            [<a data-toggle="collapse" data-target="#bibtex">Bibtex</a>]
+            <div id="bibtex" class="well collapse">
+                @inproceedings{chen14cross, <br />
+                Author = {Bor-Chun Chen and Chu-Song Chen and Winston H. Hsu}, <br />
+                Booktitle = {Proceedings of the European Conference on Computer Vision ({ECCV})}, <br />
+                Title = {Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval}, <br />
+                Year = {2014} <br />
+                } 
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Dataset</h3>
+            Cross-Age Celebrity Dataset (CACD) contains 163,446 images from 2,000 celebrities collected from the Internet. The images are collected from search engines using celebrity name and year (2004-2013) as keywords. We can therefore estimate the ages of the celebrities on the images by simply subtract the birth year from the year of which the photo was taken.
+            The downloaded dataset contain two MATLAB structures:
+            <div class="well">
+                <ul class="list-unstyled">
+                    <li>celebrityData - contains information of the 2,000 celebrities</li>
+                        <ul>
+                        <li>name - celebrity name</li>
+                        <li>identity - celebrity id</li>
+                        <li>birth - celebrity brith year</li>
+                        <li>rank - rank of the celebrity with same birth year in IMDB.com when the dataset was constructed</li>
+                        <li>lfw - whether the celebrity is in LFW dataset</li>
+                        </ul>
+                    <li>celebrityImageData - contains information of the face images</li>
+                        <ul>
+                        <li>age - estimated age of the celebrity</li>
+                        <li>identity - celebrity id</li>
+                        <li>year - estimated year of which the photo was taken</li>
+                        <li>feature - 75,520 dimension LBP feature extracted from 16 facial landmarks</li>
+                        <li>name - file name of the image</li>
+                        </ul>
+                </ul>
+            </div>
+            <p>
+            *Note that we manually removed noisy images from celebrities with rank smaller or equal to five. However, since some of the images are hard to identify even for humans, the dataset might still contains small noises. Also, we only employ very  simple duplicate detection method, so the dataset might still contain near-duplicate images.
+            </p>
+            <p>
+            *Images of other celebrities (with rank higher than five) will contain noises, so they should not be use for evaluation.
+            </p>
+            <p>
+            We are currently working on constructing a verification subset by checking the images with webstie content, so that the subset wiil be noise free. Please come back and check the update!
+            </p>
+            
+            <h5>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/">here</a>] (4.4G)</h5>
+            <h5> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/">here</a>] (3.5G)</h5>
+            <h5>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</h5>
+            <h5> Please notice that this dataset is made available for academic research purpose only. All the images are collected from the Internet, and the copyright belongs to the original owners. If any of the images belongs to you and you would like it removed, please kindly inform <a href="mailto:bcsiriuschen@gmail.com">us</a>, we will remove it from our dataset immediately.</h5>
 
 
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Results</h3>
-			Here we report the results using raw features (High-dimensional LBP) and the proposed methods (CARC) on face retrieval with three different subsets.
-			In all three subsets, images taken in 2013 are used as query images. The database contains images taken in 2004-2006, 2007-2009, 2010-2012 for each of the three subsets respectively. All three subsets contains only images of celebrities with rank from 3 to 5.
-			<div class="table-responsive">
-			<table class="table table-bordered">
-				<tr>
-					<td>Database</td>
-					<td colspan="2">2004-2006</td>
-					<td colspan="2">2007-2009</td>
-					<td colspan="2">2010-2012</td>
-				</tr>
-				<tr>
-					<td>Methods</td>
-					<td>MAP</td>
-					<td>p@1</td>
-					<td>MAP</td>
-					<td>p@1</td>
-					<td>MAP</td>
-					<td>p@1</td>
-				</tr>
-				<tr>
-					<td>High-Dimensional LBP</td>
-					<td>36.6%</td>
-					<td>78.0%</td>
-					<td>38.9%</td>
-					<td>80.3%</td>
-					<td>44.0%</td>
-					<td>85.5%</td>
-				</tr>
-				<tr>
-					<td>Cross-Age Reference Coding</td>
-					<td>52.9%</td>
-					<td>88.8%</td>
-					<td>55.5%</td>
-					<td>88.5%</td>
-					<td>61.1%</td>
-					<td>92.2%</td>
-				</tr>
-			</table>
-			</div>
-			If you use our dataset and would like to report your results, please e-mail <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a>. We will be gald to put your results on this webstie.
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Code</h3>
-			<p>
-			For cross-age reference coding (CARC) code use in this paper, please visit [<a href="https://github.com/bcsiriuschen/CARC">here</a>]
-			</p>
-			<!--
-			<p>
-			We also implemented the high-dimensional LBP features (Chen et al., CVPR 2013), please visit [<a href="http://bcsiriuschen.github.io/High-Dimensional-LBP">here</a>] for more information.
-			</p>
-			-->
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-md-12">
-			Please contact <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a> for any questions/problems/bug reports/etc.
-		</div>
-	</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Results</h3>
+            Here we report the results using raw features (High-dimensional LBP) and the proposed methods (CARC) on face retrieval with three different subsets.
+            In all three subsets, images taken in 2013 are used as query images. The database contains images taken in 2004-2006, 2007-2009, 2010-2012 for each of the three subsets respectively. All three subsets contains only images of celebrities with rank from 3 to 5.
+            <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Database</td>
+                    <td colspan="2">2004-2006</td>
+                    <td colspan="2">2007-2009</td>
+                    <td colspan="2">2010-2012</td>
+                </tr>
+                <tr>
+                    <td>Methods</td>
+                    <td>MAP</td>
+                    <td>p@1</td>
+                    <td>MAP</td>
+                    <td>p@1</td>
+                    <td>MAP</td>
+                    <td>p@1</td>
+                </tr>
+                <tr>
+                    <td>High-Dimensional LBP</td>
+                    <td>36.6%</td>
+                    <td>78.0%</td>
+                    <td>38.9%</td>
+                    <td>80.3%</td>
+                    <td>44.0%</td>
+                    <td>85.5%</td>
+                </tr>
+                <tr>
+                    <td>Cross-Age Reference Coding</td>
+                    <td>52.9%</td>
+                    <td>88.8%</td>
+                    <td>55.5%</td>
+                    <td>88.5%</td>
+                    <td>61.1%</td>
+                    <td>92.2%</td>
+                </tr>
+            </table>
+            </div>
+            If you use our dataset and would like to report your results, please e-mail <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a>. We will be gald to put your results on this webstie.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Code</h3>
+            <p>
+            For cross-age reference coding (CARC) code use in this paper, please visit [<a href="https://github.com/bcsiriuschen/CARC">here</a>]
+            </p>
+            <!--
+            <p>
+            We also implemented the high-dimensional LBP features (Chen et al., CVPR 2013), please visit [<a href="http://bcsiriuschen.github.io/High-Dimensional-LBP">here</a>] for more information.
+            </p>
+            -->
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            Please contact <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a> for any questions/problems/bug reports/etc.
+        </div>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
