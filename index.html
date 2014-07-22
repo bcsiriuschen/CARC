@@ -17,7 +17,7 @@
     <script>
         $(document).ready(function(){
             $('.download').on('click', function() {
-                ga('send', 'event', 'Downloads', 'Download', $(this).id());
+                ga('send', 'event', 'Downloads', 'Download', $(this).attr('id'));
             });
         });
     </script>
@@ -98,8 +98,8 @@
             </p>
             
             <h5>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/" class="download" id="CACD feature">here</a>] (4.4G)</h5>
-            <h5> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/" target="_blank" onClick="_gaq.push(['_trackEvent', 'Downloads', 'Download', 'CACD image']);">here</a>] (3.5G)</h5>
-            <h5>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/" target="_blank" onClick="_gaq.push(['_trackEvent', 'Downloads', 'Download', 'CACD landmark']);">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</h5>
+            <h5> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/" class="download" id="CACD image">here</a>] (3.5G)</h5>
+            <h5>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/" class="download" id="CACD landmark">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</h5>
             <h5> Please notice that this dataset is made available for academic research purpose only. All the images are collected from the Internet, and the copyright belongs to the original owners. If any of the images belongs to you and you would like it removed, please kindly inform <a href="mailto:bcsiriuschen@gmail.com">us</a>, we will remove it from our dataset immediately.</h5>
 
 
@@ -154,7 +154,7 @@
         <div class="col-md-12">
             <h3>Code</h3>
             <p>
-            For cross-age reference coding (CARC) code use in this paper, please visit [<a href="https://github.com/bcsiriuschen/CARC" target="_blank" onClick="_gaq.push(['_trackEvent', 'Downloads', 'Download', 'CACD sources']);">here</a>]
+            For cross-age reference coding (CARC) code use in this paper, please visit [<a href="https://github.com/bcsiriuschen/CARC" class="download" id="CACD sources">here</a>]
             </p>
             <!--
             <p>
