@@ -49,6 +49,9 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Publication</h3>
+            <ul>
+            <li>
+            <p>
             Bor-Chun Chen, Chu-Song Chen, Winston H. Hsu. Cross-Age Reference Coding for Age-Invariant Face Recognition and Retrieval, ECCV 2014 
             [<a href="http://cmlab.csie.ntu.edu.tw/~sirius42/papers/chen14eccv.pdf">Pdf</a>]
             [<a data-toggle="collapse" data-target="#bibtex">Bibtex</a>]
@@ -60,11 +63,21 @@
                 Year = {2014} <br />
                 } 
             </div>
+            </p>
+            </li>
+            <li>
+            <p>
+            Bor-Chun Chen, Chu-Song Chen, Winston H. Hsu. Face Recognition using Cross-Age Reference Coding with Cross-Age Celebrity Dataset, submitted to IEEE Transactions on Multimedia.
+            </p>
+            </li>
+            </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <h3>Dataset</h3>
+            <h5 class="text-danger"> Please notice that this dataset is made available for academic research purpose only. All the images are collected from the Internet, and the copyright belongs to the original owners. If any of the images belongs to you and you would like it removed, please kindly inform <a href="mailto:bcsiriuschen@gmail.com">us</a>, we will remove it from our dataset immediately.</h5>
+            <h4>Cross-Age Celebrity Dataset (CACD)</h4>
             Cross-Age Celebrity Dataset (CACD) contains 163,446 images from 2,000 celebrities collected from the Internet. The images are collected from search engines using celebrity name and year (2004-2013) as keywords. We can therefore estimate the ages of the celebrities on the images by simply subtract the birth year from the year of which the photo was taken.
             The downloaded dataset contain two MATLAB structures:
             <div class="well">
@@ -93,21 +106,24 @@
             <p>
             *Images of other celebrities (with rank higher than five) will contain noises, so they should not be use for evaluation.
             </p>
+            <ul>
+            <li>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/" class="download" id="CACD feature">here</a>] (4.4G)</li>
+            <li> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/" class="download" id="CACD image">here</a>] (3.5G)</li>
+            <li>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/" class="download" id="CACD landmark">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</li>
+            </ul>
             <p>
-            We are currently working on constructing a verification subset by checking the images with webstie content, so that the subset wiil be noise free. Please come back and check the update!
+            <h4>Verification Subset (CACD-VS)</h4>
+            We manually selected 2,000 positive cross-age image pairs and 2,000 negative pairs to form a subset for face verification task similar to the one used is LFW. The image pairs are carefully annotated by checking image content with surrdening text in the web pages. We evaluate the human preformance on this subset using Amazon Mechnical Turks.
             </p>
-            
-            <h5>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/" class="download" id="CACD feature">here</a>] (4.4G)</h5>
-            <h5> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/" class="download" id="CACD image">here</a>] (3.5G)</h5>
-            <h5>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/" class="download" id="CACD landmark">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</h5>
-            <h5> Please notice that this dataset is made available for academic research purpose only. All the images are collected from the Internet, and the copyright belongs to the original owners. If any of the images belongs to you and you would like it removed, please kindly inform <a href="mailto:bcsiriuschen@gmail.com">us</a>, we will remove it from our dataset immediately.</h5>
-
-
+            <ul>
+            <li>verification subset (CACD-VS) [coming soon]</li>
+            </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h3>Results</h3>
+            <h3>Experimental Results</h3>
+            <h4>Face retrieval performance on CACD</h4>
             Here we report the results using raw features (High-dimensional LBP) and the proposed methods (CARC) on face retrieval with three different subsets.
             In all three subsets, images taken in 2013 are used as query images. The database contains images taken in 2004-2006, 2007-2009, 2010-2012 for each of the three subsets respectively. All three subsets contains only images of celebrities with rank from 3 to 5.
             <div class="table-responsive">
@@ -145,6 +161,35 @@
                     <td>61.1%</td>
                     <td>92.2%</td>
                 </tr>
+            </table>
+            </div>
+            <h4>Face verification performance on CACD-VS</h4>
+            <div class="table-responsive">
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <td> Method </td>
+                    <td> Verification Accuracy </td>
+                </tr>
+                <tr>
+                    <td>High-Dimensional LBP</td>
+                    <td>81.6%</td>
+                </tr>
+                <tr>
+                    <td>Hidden Factor Analysis</td>
+                    <td>84.4%</td>
+                </tr>
+                <tr>
+                    <td>Cross-Age Reference Coding</td>
+                    <td>87.6%</td>
+                </tr>
+                <tr>
+                    <td>Human, Average</td>
+                    <td>85.7%</td>
+                </tr>
+                <tr>
+                    <td>Human, Voting</td>
+                    <td>94.2%</td>
+                </tr>                                                                
             </table>
             </div>
             If you use our dataset and would like to report your results, please e-mail <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a>. We will be gald to put your results on this webstie.
