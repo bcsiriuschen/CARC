@@ -100,17 +100,17 @@
                         </ul>
                 </ul>
             </div>
-            <p>
-            *Note that we manually removed noisy images from celebrities with rank smaller or equal to five. However, since some of the images are hard to identify even for humans, the dataset might still contains small noises. Also, we only employ very  simple duplicate detection method, so the dataset might still contain near-duplicate images.
-            </p>
-            <p>
-            *Images of other celebrities (with rank higher than five) will contain noises, so they should not be use for evaluation.
-            </p>
             <ul>
             <li>The dataset metadata and features used in this paper can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3S1dBR0MtbWw5OVk/" class="download" id="CACD feature">here</a>] (4.4G)</li>
             <li> Original face images (detected and croped by openCV face detector) can be downloaded [<a href="https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/" class="download" id="CACD image">here</a>] (3.5G)</li>
             <li>16 faical landmark locations used in this paper can be downloaded [<a href="https://docs.google.com/file/d/0B3zF40otoXI3dDFvSXlrZndqSVU/" class="download" id="CACD landmark">here</a>] (24M) (extracted by <a href="http://www.humansensing.cs.cmu.edu/intraface/">Intraface</a>)</li>
             </ul>
+            <p>
+            <h5>Notes</h5>
+            *we manually removed noisy images from celebrities with rank smaller or equal to five. However, since some of the images are hard to identify even for humans, the dataset might still contains small noises. Also, we only employ very  simple duplicate detection method, so the dataset might still contain near-duplicate images. <br />
+            *Images of other celebrities (with rank higher than five) will contain noises, so they should not be use for evaluation. <br />
+            *The dataset is mainly designed for cross-age face recognition and retrieval. The year labels in the CACD dataset is rough and thus we do not suggest to apply it to age-estimation works. <br />
+            </p>
             <p>
             <h4>Verification Subset (CACD-VS)</h4>
             We manually selected 2,000 positive cross-age image pairs and 2,000 negative pairs to form a subset for face verification task similar to the one used is LFW. The image pairs are carefully annotated by checking image content with surrdening text in the web pages. We evaluate the human preformance on this subset using Amazon Mechnical Turks.
