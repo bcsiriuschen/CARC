@@ -173,33 +173,53 @@
             <table class="table table-bordered table-condensed">
                 <tr>
                     <td> Method </td>
-                    <td> Verification Accuracy </td>
+                    <td> AUC </td>
                 </tr>
                 <tr>
-                    <td>High-Dimensional LBP</td>
-                    <td>81.6%</td>
+                    <td>High-Dimensional LBP [1]</td>
+                    <td>88.8%</td>
                 </tr>
                 <tr>
-                    <td>Hidden Factor Analysis</td>
-                    <td>84.4%</td>
+                    <td>Hidden Factor Analysis [2]</td>
+                    <td>91.7%</td>
                 </tr>
                 <tr>
-                    <td>Cross-Age Reference Coding</td>
-                    <td>87.6%</td>
-                </tr>
-                <tr>
-                    <td>Human, Average</td>
-                    <td>85.7%</td>
-                </tr>
-                <tr>
-                    <td>Human, Voting</td>
+                    <td>Cross-Age Reference Coding [3]</td>
                     <td>94.2%</td>
+                </tr>
+                <tr>
+                    <td>LF-CNNs [4]</td>
+                    <td>99.3%</td>
+                </tr>
+                <tr>
+                    <td>Human, Average [3]</td>
+                    <td>94.6%</td>
+                </tr>
+                <tr>
+                    <td>Human, Voting [3]</td>
+                    <td>99.0%</td>
                 </tr>                                                                
             </table>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <h4>ROC Curve on CACD-VS</h4>
+            <img src="roc.png" width="100%"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Reference</h5>
+            1. D.Chen,X.Cao,F.Wen,andJ.Sun,“Blessingofdimensionality:High- dimensional feature and its efficient compression for face verification,” in IEEE Conf. Computer Vision and Pattern Recognition, 2013, pp. 3025– 3032. <br />
+            2. D. Gong, Z. Li, D. Lin, J. Liu, and X. Tang, “Hidden factor analysis for age invariant face recognition,” in IEEE Int. Conf. Computer Vision, 2013. <br />
+            3. Chen, Bor-Chun, Chu-Song Chen, and Winston H. Hsu. "Face recognition and retrieval using cross-age reference coding with cross-age celebrity dataset." IEEE Transactions on Multimedia 17.6 (2015): 804-815. <br />
+            4. Wen, Yandong, Zhifeng Li, and Yu Qiao. "Latent factor guided convolutional neural networks for age-invariant face recognition." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016. <br />
             If you use our dataset and would like to report your results, please e-mail <a href="mailto:bcsiriuschen@gmail.com">Sirius Chen</a>. We will be gald to put your results on this webstie.
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
             <h3>Code</h3>
